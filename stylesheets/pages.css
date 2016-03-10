@@ -154,6 +154,8 @@ textarea {
   display: block;
   width: 169px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36pt;
 }
 
 #hero-spot {
