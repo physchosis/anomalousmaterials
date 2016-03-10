@@ -151,11 +151,15 @@ textarea {
 }
 
 .logo {
-  display: block;
-  width: 169px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-size: 36pt;
+ display: block;
+    /* width: 169px; */
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36pt;
+    text-align: center;
+    color: lightgreen;
+    text-shadow: 2px 2px 35px #17F928;
+    font-weight: bold;
 }
 
 #hero-spot {
