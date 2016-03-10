@@ -167,6 +167,9 @@ textarea {
   position: relative;
   overflow: hidden;
   background: #222;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(255, 0, 0, 0.45) ), url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Shibuya_Night_(HDR).jpg');
 }
 
 .help-link {
