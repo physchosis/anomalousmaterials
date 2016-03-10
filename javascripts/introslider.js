@@ -243,6 +243,6 @@
 }).call(this);
 
 // just slapped in here for time being
-window.onload(function() {
+$( document ).ready(function() {
 $('#hero-spot').height($( window ).height());
 });
