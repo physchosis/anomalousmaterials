@@ -38,10 +38,7 @@ q:before, q:after {
   content: '';
   content: none;
 }
-h1,h2,h3,h4 {
-	margin: 0 !important;
-	
-}
+
 ins {
   text-decoration: none;
 }
@@ -197,7 +194,7 @@ textarea {
 }
 
 h1 {
-  margin: 90px auto 0 auto;
+  margin: 90px auto 0 auto !important
   font-size: 48px;
   font-weight: 200;
   line-height: 60px;
