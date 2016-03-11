@@ -43,19 +43,18 @@
   
 <h1>Making materials distribution for <br> the security community easier.</h1>
 <h2>Readers....read....writers...publish directly from <a href="https://github.com">GitHub</a>.<br> Try to think of it like Docker but for content materials and informational artifacts.</h2>
-  <h2><button type="button" class="btn btn-lg btn-primary-outline">How It Works</button>
-  <button type="button" class="btn btn-lg btn-success-outline">Login</button></h2>
+  <h2><button type="button" class="btn btn-lg btn-primary-outline" id="how_it_works_button">How does it work?</button>
+  <button type="button" class="btn btn-lg btn-success-outline" id="login_button">Login</button></h2>
     <a href="#" class="help-link">Login</a>
 
     <div id="slideshow">
       <!-- some nice cool graphic and images should go here -->
     </div>
 </section>
-
 <section id="tutorial" class="tutorial">
-  <h1>How it works!</h1>
-  <h2>Select reader or writer</h2>
-
+  <a name="how_it_works"></a><h1>How it works!</h1>
+  <h2>Are you a reader or writer?<br>(select one for now)</h2>
+  
   <ul class="tabs">
     <li><a href="#project-site" class="selected">Reader</a></li>
     <li><a href="#user-site">Writer (author)</a></li>
@@ -64,7 +63,7 @@
   <!-- ### Start of tutorials -->
   <ul id="user-site" class="tutorial-list wrapper">
     <li id="create-repo-step" class="image-right">
-      <h4>Create a repository</h4>
+      <h4>So your interested in adding materials you have found, new resources, writing articles, or sharing/mentoring?</h4>
       <p>Head over to <a href="https://github.com">GitHub</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a> named <em>username</em>.github.io, where <em>username</em> is your username (or organization name) on GitHub.</p>
 
       <p class="details">If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
@@ -105,7 +104,8 @@
       <div class="terminal">
         <div class="header"></div>
         <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>git clone https://github.com/<em>username</em>/<em>username</em>.github.io</p>
+          <p>Coming Soon!</p>
+          <p><span class="path">~</span><span class="prompt">$</span>git clone https://github.com/<em>____</em>/<em>____</em>.github.io</p>
         </div>
       </div>
     </li>
@@ -125,14 +125,16 @@
     </li>
 
     <li class="option-terminal">
-      <h4>Hello World</h4>
-      <p>Enter the project folder and add an index.html file:</p>
+      <h4>Add Material Metadata</h4>
+      <p>Enter the project folder and add an metadata file:</p>
 
       <div class="terminal">
         <div class="header"></div>
         <div class="shell">
+          <!-- 
           <p><span class="path">~</span><span class="prompt">$</span>cd <em>username</em>.github.io</p>
           <p><span class="path">~</span><span class="prompt">$</span>echo "Hello World" > index.html</p>
+          -->
         </div>
       </div>
     </li>
@@ -186,7 +188,7 @@
 
     <li class="option-all">
       <h4>…and you're done!</h4>
-      <p>Fire up a browser and go to <strong>http://<em>username</em>.github.io</strong>.</p>
+      <p>Fire up a browser and go to _________.</p>
       <div class="hero-octicon">
         <span class="mega-octicon octicon-check"></span>
       </div>
@@ -197,47 +199,52 @@
   <!-- Project Site tutorial -->
   <ul id="project-site" class="tutorial-list wrapper active">
     <li class="question">
-      <h4>Generate a site, or start from scratch?</h4>
-      <p>For Project sites, you have the option to generate a site with one of the amazing pre-built themes, or to create a site from scratch.
+      <h4>Do you find it difficult to keep track of new material in the security market?</h4>
+      <p>By material, we don't just mean content, we mean any material. Maybe there is a new way to attack something, or defend it. Maybe a <a target="_blank" href="https://github.com/fulldecent/system-bus-radio/tree/master/In%20Javascript">new project or code that someone started on github was just released</a>, a steganographic audio file with an embedded CyberSpace Token Ring that wins you free Captain Crunch... or <a href="https://blindseeker.com/blahg/?p=817" target="_blank">guides on how to</a> do ____ on ____ using ____. <br><br>Sure there is google, <a target="_blank" href="http://www.pintrest.com">bookmarketing tools</a>, awesome youtube video channels, conferences, books, twitterverse, IRC, and major news portals so why would I need something else? 
+      The problem for me at least was finding, quality material without diving into a pile of _______ and filtering through the noise. Sometimes, I would sit watching the twittersphere, asking people, or hunting for information. Then one day I spoke to an archeologist, and my anomalous light went off...Why not treat materials in our market, as artifacts....because if its known...its probably no longer an 0 day...
       <ul class="tabs">
-        <li><a id="option-generate" href="#generate-step-1" class="selected">Generate a site</a></li>
-        <li><a id="option-vanilla" href="#vanilla-step-1">Start from scratch</a></li>
+        <li><a id="option-generate" href="#generate-step-1" class="selected">Rant More?</a></li>
+        <li><a id="asignup" href="#">Signup (coming soon)</a></li>
       </ul>
     </li>
 
     <li id="generate-step-1" class="option-generate">
-      <h4>Repository Settings</h4>
-      <p>Head over to <a href="https://github.com/">GitHub.com</a> and create a new repository, or go to an existing one. <strong>Click on the Settings tab</strong>.</p>
-      <p class="details">For <strong>Project pages</strong>, the <code>gh-pages</code> branch is used to publish your site. That means that you can work with GitHub Pages in the same repository as the project that it's for, without affecting the project itself.</p>
-
-      <img src="images/settings@2x.png" width="489" alt="Settings for a repository" />
+      <h4>Swimming in a _____ pool of meaningless jargon, hype, and buzzwords</h4>
+      <p>Everywhere we look, there seems to be some new thing that exploits a somewhat older thing, then the older thing is patched/fixed/removed. A few days,weeks,years later a magical product is created/offered that will fix everything and supposedly clean your ____ while its at it. All while it ends up getting promoted by _______. While the noise is useful to the market from a business perspective, raising public awareness, or increasing one's ego, there is a downside. That noise, is sometimes so ___ loud, that the quality information, the subtle notes by artists on how something actually works, how you can learn from it...utilize it...or do something about it...sink to the bottom, forgotten, only to be seen floating to the surface again, as time goes by.   
+      But since everyone is in the market of making up terms.....<br><strong>The Anomalous Project</strong> will go ahead and assist in the process....
+      <br><br>Uh so WTF is this thing and the goal again?  <a href="https://www.youtube.com/watch?v=SvODpHnV9o4" target="_blank">da da daaa magical strings play</a>....The goal of this project is to hopefully provide <strong>You The Anomalous Reader</strong> with access to material like Guides, Rants and Raves, and material artifacts similar to keeping a stack of old <a href="http://www.amazon.com/2600-The-Hacker-Digest-Volume-ebook/dp/B007Q1EBIS" target="_blank">2600 magazines</a> from back in the day. There is a big twist though. The material themselves will have Linked Metadata information that will enable the app and others to hopefully produce some really cool customizations just for  <strong>You The Anomalous Reader</strong>.
     </li>
 
     <li class="option-generate">
-      <h4>Automatic Generator</h4>
-      <p>Scroll down to the <strong>GitHub Pages</strong> module. Press the <strong>Launch automatic page generator</strong> button.</p>
-      <img src="images/automatic@2x.png" width="520" alt="Automatic Generator button on GitHub.com, Settings" />
+      <h4>How do I get access?</h4>
+      <p>The project has just started, and I am still in the process of developing things and the UI, in particular the coding process for gathering and displaying materials is being toyed around with and contemplated.<br> <br>This is why I need <strong>You The Anomalous Reader's</strong> help.  <br>First by <a href="https://github.com/physchosis/anomalousmaterials/issues" target="_blank"> opening issues with the following</a> and by offering any other help if you can.  Even a nifty logo would help...<br>
+      <br>--List of Humans, Projects, Guides, Blogs that you follow like a hawk related to security. <br>
+      --List of code projects, haks, either new or old, but not being media hyped.<br>
+      --List of whitepapers, video guides, like how to attack or defend ______<br>
+      --List of tools you are currently using to collect information on, bookmarketing, reddit whatever...<br>
+      <br>
+       
     </li>
 
-    <li class="option-generate">
-      <h4>Add content</h4>
-      <p>Use the editor to add content to your site. If you already have a <code>README.md</code> in your project, you can import that on the right hand side.</p>
-      <p>When you're done, click <strong>Continue to Layouts</strong>.</p>
-
-      <img class="full-size" src="images/add-content@2x.png" width="681" alt="Add content to your GitHub Pages site" />
-    </li>
+   
 
     <li class="option-generate">
-      <h4>Pick a theme</h4>
-      <p>Choose between the themes in the carouselle at the top. When you're done, <strong>click the Publish button</strong> on the right hand side.</p>
+      <h4>What no signup form, fancy screenshots or proof???</h4>
+      <p>Soon... But <strong>Initially</strong> the material will be provided visually in a small app in a card format kind of like bookmarketing websites or seen below. The difference is in how the cards linking to the material are constructed. Basically each anomalous material, will use metadata maintained by its originating author.... At which point each card will have associated options on what you can do with the anomalous material. Maybe you can downloaded it...maybe its encrypted..maybe the material itself is secret code for the user cyber apocalpyse end of the world date...or a puzzle produced by 1o57 for you to solve...For instance if its an artifact that is a video, then it might play the video, if it is an artifact to a code repository, it might show you information regarding the project, possibly snippets of code etc. The metadata may also be linked thus making a material artifact a larger conglomerate.
+      <br><br>
+      Unlike the bookmarketing sites, the idea behind a conglomerate is to group related anomalous materials together. <strong>The following is a good hist</strong> to give you a better idea. 
+      Back in the mid-late 90's there was a digital Artist group called <a href="http://www.ICE.org" target="_new">ICE.org</a> one of the really cool things they did was make something called Artist <a href="http://www.ice.org/tiles/Mainquilters-32:-Time" target="_blank">Digital Tiles</a>. The digital tiles were a collaboration of artwork combined into one big image. Think of google maps, but that each title consists of someone actually creating the artwork behind the tile. Rumor has it that some of the artist were big in the demoscene, and cracktros back in the day... 
+      </p>
 
-      <img src="images/choose-layout@2x.png" class="full-size" width="610" alt="Choose layout" />
+      <img src="images/cardexample.png" class="full-size"  alt="Choose layout" /> 
+      
+      <img src="images/iceorg.png" class="full-size"  alt="Collab Tiles" />
     </li>
 
     <!-- Start of vanilla sub tutorial -->
     <li id="vanilla-step-1" class="option-vanilla">
       <h4>Create a gh-pages branch</h4>
-      <p>Head over to <a href="https://github.com/">GitHub.com</a> and create a new repository, or go to an existing one. In the repository overview, click the branch drop-down on the left-hand side. Type in <code>gh-pages</code> and press enter.</p>
+      <p>Head over to <a href="https://github.com/">GitHub.com</a> and create a new repository, or go to an existing one. In the repository overview, click the branch drop-down on the left-hand side. Type in <code>amp-pages</code> and press enter.</p>
 
       <p class="details">For <strong>Project pages</strong>, the <code>gh-pages</code> branch is used to publish your site. That means that you can work with GitHub Pages in the same repository as the project that it's for.</p>
       <img src="images/create-branch@2x.png" width="525" alt="Create a branch named gh-pages" />
@@ -272,19 +279,18 @@
     </li>
 
     <li class="option-all">
-      <h4>…and you're done!</h4>
-      <p>Fire up a browser and go to <strong>http://<em>username</em>.github.io/<em>repository</em></strong>.</p>
-      <div class="hero-octicon">
-        <span class="mega-octicon octicon-check"></span>
-      </div>
+      <h4>…and EOT.....we are done for now!</h4>
+      <p>We will update this as we make more progress to tell you the next steps...</p>
+      
     </li>
   </ul>
 
 </section>
 <!-- End of tutorial section -->
-
+<!-- 
 <section id="next-steps">
-  <h1>Now that you’re up and running, here are a few things you should know.</h1>
+  <h1>Other Info...</h1>
+  
 
   <ul class="next-steps wrapper">
     <li class="jekyll">
@@ -310,11 +316,13 @@
     </li>
   </ul>
 </section>
+-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
 <script>window.slides = {"bootstrap":"Bootstrap","yeoman":"Yeoman","facebookdesign":"Facebook Design","foundation":"Foundation","ghtraining":"GitHub Training","adobeos":"Adobe Open Source","jekyllrb":"Jekyll","electron":"Electron","semanticui":"Semantic UI","microsoft":"Microsoft on GitHub"}</script>
 <script src="./javascripts/introslider.js"></script>
+<script src="./javascripts/main.js"></script>
 
 
 <footer class="page-footer">

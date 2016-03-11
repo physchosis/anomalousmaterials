@@ -1,5 +1,6 @@
 /* ### Reset ### */
 
+/* Borrowed from Github */
 
 .container-fluid {
 	padding: 0px !important;
@@ -351,6 +352,9 @@ h1 {
   display: block;
 }
 
+P {
+  text-align: left;
+}
 .tutorial-list > li {
   position: relative;
   background-color: #fff;
@@ -515,7 +519,7 @@ h1 {
 }
 
 .tutorial-list .question:after {
-  content: "?";
+  content: ">?";
 }
 
 .tutorial-list > li:not(.question):after {
