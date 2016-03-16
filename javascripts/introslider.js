@@ -203,8 +203,9 @@
     };
 
     Tutorial.prototype.tutorialTabClick = function(e) {
-      var href;
+      var href; 
       e.preventDefault();
+      
       this.selectTab(e.currentTarget);
       $(".tutorial-list.active").removeClass("active");
       href = $(e.currentTarget).attr("href");
@@ -220,6 +221,12 @@
 
     Tutorial.prototype.questionTabClick = function(e) {
       var currentOption, newOption, stepIndex;
+      console.log($(e.currentTarget)[0].id);
+      console.log($(e.currentTarget));
+      if($(e.currentTarget)[0].id == 'ignore') {
+        return;
+      }
+      
       e.preventDefault();
       currentOption = $(e.currentTarget).closest(".tabs").find(".selected").attr("id");
       this.selectTab(e.currentTarget);
