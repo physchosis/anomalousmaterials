@@ -167,6 +167,12 @@ textarea {
     text-shadow: 2px 2px 35px #17F928;
     font-weight: bold;
 }
+.logo:hover {
+   color: red;
+    text-shadow: 2px 2px 35px white;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 #hero-spot {
   padding: 150px 0 0;

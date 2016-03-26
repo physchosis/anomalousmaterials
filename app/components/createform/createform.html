@@ -1,0 +1,279 @@
+
+<div class="btn-group" data-toggle="buttons"> 
+     <button type="button" id="lazy_submit_button" class="btn btn-danger-outline active" ng-click="vm.submitURLForm()">Just Submit A URL (Lazy)</button>
+     <button type="button" id="better_submit_button" class="btn btn-warning-outline" ng-click="vm.showSimpleForm()">Submit with more info (Better..)</button>
+     <button type="button" id="anomalous_submit_button" class="btn btn-success-outline" ng-click="vm.showAdvancedForm()">Anomalous (Preferred / Advanced)</button>
+  <!-- <label class="btn btn-danger-outline active">
+     
+    <input type="radio" name="options" id="option1" ng-change="vm.submitURLForm()" autocomplete="off" checked> Just Submit A URL (For The Lazy)
+  </label>
+  <label class="btn btn-warning ">
+    <input type="radio" name="options" id="option2" ng-change="vm.showSimpleForm()" autocomplete="off"> Submit with more info (Actually Contribute)
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" id="option3"  ng-change="vm.showAdvancedForm()" autocomplete="off"> Preferred / Advanced / Anomalous Users
+  </label> -->
+</div>
+
+
+<div class="container-fluid">
+
+    <br>
+    <div id="submit_url_form">
+        <form name="submit_url_form_fields">
+        
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter your name, handle, someone we can shout out and say awesome too... (Twitter...Your Pet...Your neighbor...not me...) </label>
+                    <input type="text" class="form-control" required name="amp_creator" id="amp_creator" ng-model="vm.formModel.amp_creator" placeholder="{{ vm.sampleModel.amp_creator }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter A Material Title (The new rabbit attack has rabies)</label>
+                    <input type="text" class="form-control" required name="amp_title" id="amp_title" ng-model="vm.formModel.amp_title" placeholder="{{ vm.sampleModel.amp_title }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Provide Description/Background Text (Blurb about what this material is about)</label>
+                    <textarea class="form-control" ng-required="true" name="amp_background_text" id="amp_background_text" ng-model="vm.formModel.amp_background_text" placeholder="{{ vm.sampleModel.amp_background_text }}" required>
+                    </textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Select Source Type (important)</label>
+                    <select class="form-control" ng-required="true" name="amp_source_type" id="amp_source_type" ng-model="vm.formModel.amp_source.type" ng-options="option.name for option in vm.sourceTypes track by option.id">
+                         <option value="">---Please select---</option> 
+                    </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter the URL to view the material</label>
+                    <div ng-if="vm.formModel.amp_source.type != '' && vm.formModel.amp_source.type.id == 'VIDEO'"><label for="formGroupExampleInput2">Please enter the embed URL for the video</label></div>
+                    <input type="text" class="form-control" required name="amp_source_view_url" id="amp_source_view_url" ng-model="vm.formModel.amp_source.view_url" placeholder="{{ vm.sampleModel.amp_source.view_url }}">
+                </fieldset>
+                <button type="submit" class="btn btn-success" ng-disabled="submit_url_form_fields.$invalid" ng-click="vm.createAMP()">Submit</button>
+                </form>
+                
+    </div>
+    <div id="simple_form" style="display: none">
+        <form name="simple_form_fields">
+            <div class="form-group row">
+
+                <h2>Material Background</h2>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput">Original Author Of Material (who created it)</label>
+                    <input type="text" class="form-control" required name="amp_author" id="amp_author" ng-model="vm.formModel.amp_author" placeholder="{{ vm.sampleModel.amp_author }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter your name, handle, someone we can shout out and say awesome too... (Twitter...Your Pet...Your neighbor...not me...) </label>
+                    <input type="text" class="form-control" required name="amp_creator" id="amp_creator" ng-model="vm.formModel.amp_creator" placeholder="{{ vm.sampleModel.amp_creator }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter A Material Title (The new rabbit attack has rabies)</label>
+                    <input type="text" class="form-control" required name="amp_title" id="amp_title" ng-model="vm.formModel.amp_title" placeholder="{{ vm.sampleModel.amp_title }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Provide Description/Background Text (Blurb about what this material is about)</label>
+                    <textarea class="form-control" required name="amp_background_text" id="amp_background_text" ng-model="vm.formModel.amp_background_text" placeholder="{{ vm.sampleModel.amp_background_text }}">
+                    </textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Tags (comma delimited list)</label>
+                    <input type="text" class="form-control" name="amp_tags" id="amp_tags" ng-model="vm.formModel.amp_tags" placeholder="{{ vm.sampleModel.amp_tags }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Select Category (helps with filtering until tags are populated)</label>
+                    <select class="form-control" required name="amp_category" id="amp_category" ng-model="vm.formModel.amp_category" ng-options="option.name for option in vm.categoryOptions track by option.id">
+                    </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Image Url (full url)</label>
+                    <input type="text" class="form-control" name="amp_image_url" id="amp_image_url" ng-model="vm.formModel.amp_image_url" placeholder="{{ vm.sampleModel.amp_image_url }}">
+
+                </fieldset>
+
+
+                <h2>Source Info: (see anomalous/advanced options above)</h2>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Select Source Type (important)</label>
+                    <select class="form-control" required ng-required="true" name="amp_source_category" id="amp_source_category" ng-model="vm.formModel.amp_source.type" ng-options="option.name for option in vm.sourceTypes track by option.id">
+                        <option value="">---Please select---</option> 
+                    </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter the URL to view the material</label>
+                    <input type="text" class="form-control" required name="amp_source_view_url" id="amp_source_view_url" ng-model="vm.formModel.amp_source.view_url" placeholder="{{ vm.sampleModel.amp_source.view_url }}">
+                </fieldset>
+                <div ng-if="vm.formModel.amp_source.type.id == 'MARKDOWN'">
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the main readme file</label>
+                            <input type="text" class="form-control" required name="amp_source_file_url"  id="amp_source_file_url" ng-model="vm.formModel.amp_source.file_url" placeholder="{{ vm.sampleModel.amp_source.file_url }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the base URL </label>
+                            <input type="text" class="form-control" name="amp_source_base_url" id="amp_source_base_url" ng-model="vm.formModel.amp_source.base_url" placeholder="{{ vm.sampleModel.amp_source.base_url }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the base branch </label>
+                            <input type="text" class="form-control"  name="amp_source_base_branch" id="amp_source_base_branch" ng-model="vm.formModel.amp_source.base_branch" placeholder="{{ vm.sampleModel.amp_source.base_branch }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the branch name (the one to look at) </label>
+                            <input type="text" class="form-control" name="amp_source_branch_name" id="amp_source_branch_name" ng-model="vm.formModel.amp_source.branch_name" placeholder="{{ vm.sampleModel.amp_source.branch_name }}">
+                        </fieldset>
+                </div>
+                <div ng-if="vm.formModel.amp_source.type.id == 'FILES'">
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the main file name (something.tar.gz) </label>
+                            <input type="text" class="form-control" name="amp_source_file_name" required id="amp_source_file_name" ng-model="vm.formModel.amp_source.file_name" placeholder="{{ vm.sampleModel.amp_source.file_name }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Specific File Description (this file contains a list of _____ ) </label>
+                            <input type="text" class="form-control" name="amp_source_file_desc" id="amp_source_file_desc" required ng-model="vm.formModel.amp_source.file_desc" placeholder="{{ vm.sampleModel.amp_source.file_desc }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Enter the file size (100mb, 300gb) </label>
+                            <input type="text" class="form-control" id="amp_source_file_size" name="amp_source_file_size" ng-model="vm.formModel.amp_source.file_size" placeholder="{{ vm.sampleModel.amp_source.file_size }}">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="formGroupExampleInput2">Is there a checksum, or file integrity? If so enter it... </label>
+                            <input type="text" class="form-control" name="amp_source_integrity" id="amp_source_integrity" ng-model="vm.formModel.amp_source.integrity" placeholder="{{ vm.sampleModel.amp_source.integrity }}">
+                        </fieldset>
+                </div>
+                
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Where did you find it? (Name of material source origin)</label>
+                    <input type="text" class="form-control" name="amp_source_origin" id="amp_source_origin" ng-model="vm.formModel.amp_source.origin" placeholder="{{ vm.sampleModel.amp_source.origin }}">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Where is it located? (Name of site/place it can be found)</label>
+                    <input type="text" class="form-control" name="amp_source_location" id="amp_source_location" ng-model="vm.formModel.amp_source.location" placeholder="{{ vm.sampleModel.amp_source.location }}">
+                </fieldset>
+                
+                
+                <button type="submit" class="btn btn-success" ng-disabled="simple_form_fields.$invalid" ng-click="vm.createAMP()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div id="advanced_form" style="display: none">
+        <div class="form-group row">
+            <h2>Advanced Anomalous Material Creation</h2>
+            <p>There are a few different ways that anomalous materials can be created. The first recommendation would be to read the README file associated with the main gh-pages branch. This will actually be moved to the amp-materials branch and have its
+                own anomalous material metadata file associated. </p>
+
+            <h2>Option 1 - Fork/Clone amp-materials repo, add anomalous metadata file, submit pull request</h2>
+            <p>For Github users that just want to clone the amp-materials branch, make your change, and submit a pull request simply clone the amp-materials repository, take one of the examples, copy and modify the meta-data, and then just submit a pull request. The only downside to doing this is that the change will have to be accepted into the
+                main trunk line. Im not a git expert so there might be ways of doing this differently like adding submodules, and thoughts here would be appreciated.</p>
+
+            <h2>Option 2 - For users that want to host their own anomalous metadata file either in their own repo or elsewhere.</h2>
+            <p>If you are using github, you can simply create a new repo, or add the metadata file to an existing repo and then submit it using the form below. If you are not using github, and you are hosting the metadata file on a server with CORS enabled,
+                then you must provide access for the anomalous materials domain. This is only temporary as there is currently no server backend to process outbound requests. In the future I may add other methods to submit depending on your feedback. For
+                information on CORS see <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">the wikipedia article</a> or determine how to add the appropriate cross origin resource headers for your specific environment.</p>
+            The following are steps if you want to host your own anomalous metadata file. </p>
+            <h4>1) If your using github - create a new repository and name it amp-&lt;whateveryouwant&gt;</h4>
+            <p>Go to the folder where you want to store your project, and clone the repository:</p>
+
+            <div class="terminal">
+                <div class="header"></div>
+                <div class="shell">
+                    <p>Coming Soon!</p>
+                    <p><span class="path">~</span><span class="prompt">$</span>git clone https://github.com/<em>____</em>/<em>____</em>.github.io</p>
+                </div>
+            </div>
+            <h4>2) If you are not using github</h4>
+            <p>GOTO step 3...add a metadata json file with your material information onto your server and submit it in the form below</p>
+            <h4>3) Add a anomalous material metadata JSON file like below (checkout the readme file for more details)</h4>
+            <p>Hopefully these are self explanitory if not check out the <a href="https://github.com/physchosis/anomalousmaterials/" target="_blank">README which also contains the schema information</a> <a href="https://github.com/physchosis/anomalousmaterials/issues"
+                target="_blank">please create an issue</a></p>
+
+            <div class="terminal">
+                <div class="header"></div>
+                <div class="shell">
+                    <p><span class="path">~</span><span class="prompt">$</span>cat &lt;&lt;EOF &gt;amp-whatever.json</EOF>
+                    </p>
+
+                    <p>
+                        <pre class="shell">
+{
+  "amp_author": "@authorOFMaterialNameTeamWTFUwant",
+  "amp_creator": "@creatorThatIsAddingIt",
+  "amp_created": "1234567890",
+  "amp_status": "draft",
+  "amp_title": "Attack surfaces for zeus botnet",
+  "amp_background_text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+  "amp_tags": "article, guides, rants, complaints",
+  "amp_category": {
+    "id": "PROJECT",
+    "name": "Project"
+  },
+  "amp_image_url": "https://i.ytimg.com/vi/0xRCYmbvfEs/maxresdefault.jpg",
+  "amp_thumb_url": null,
+  "amp_name": "Guide To Attack Surfaces",
+  "amp_contact": {
+    "twitter": "@author",
+    "email": "someone@someplace.com"
+  },
+  "amp_source": {
+    "created": "1458385143",
+    "updated": "1458385143",
+    "origin": "Twitter",
+    "location": "Github",
+    "type": {
+      "id": "MARKRDOWN",
+      "name": "Github (project markdown readme files etc)"
+    },
+    "file_name": "README.md",
+    "file_desc": "Blog Entry Point",
+    "file_size": "1mb",
+    "integrity": "sha384-vZ2WR....",
+    "crossorigin": "anonymous",
+    "base_url": "https://raw.githubusercontent.com/",
+    "view_url": "https://github.com/markdown-it/markdown-it",
+    "file_url": "https://raw.githubusercontent.com/markdown-it/markdown-it/master/README.md",
+    "base_branch": "markdown-it/markdown-it",
+    "branch_name": "master",
+    "branch_list": []
+  }
+}
+</pre> EOF
+                    </p>
+                </div>
+            </div>
+
+            <h4>4) Submit your anomalous metadata file URL.</h4>
+            <form id="amp_external_form">
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput2">Enter the url to anomalous materials amp-&lt;whateveryouwant&gt;.json file </label>
+                    <input type="text" class="form-control" required ng-required="true" id="amp_external_url" ng-model="vm.amp_external_url" placeholder="https://github.com/someone/somebranch/amp-whateveryouwant.json">
+                </fieldset>
+                <button ng-click="vm.createExternalAMP()" ng-disabled="amp_external_form.$invalid"  class="btn btn-success">Submit</button>
+            </form>
+
+            <br><br>
+
+            <h2>Or Edit the JSON below and submit it</h2>
+            <form id="advFormJSON" name="advFormJSON">
+                <fieldset class="form-group">
+                    <label for="formGroupExampleInput"><a href="#" ng-click="vm.toggleAdvJSONForm()">Edit Material JSON</a></label>
+                    <div id="advanced_json_display" ng-show="vm.displayAdvJSON == true">
+                        <div class="terminal">
+                            <div class="header"></div>
+                            <div class="shell">
+<pre class="shell">
+{{ vm.advancedModel | json }}
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="advanced_json_form" ng-show="vm.displayAdvJSON == false">
+                        <textarea ng-blur="vm.toggleAdvJSONForm()" style="height: 200px" name="advanced_form" class="form-control" id="advanced_form">{{ vm.advancedModel }}
+
+                        </textarea>
+                        <button class="btn btn-default" ng-click="vm.saveJSONChanges('advanced_form')">Store Changes Temporarily</button>
+                        <button class="btn btn-success" ng-click="vm.createAMP()">Submit</button>
+                    </div>
+                </fieldset>
+        </div>
+        </form>
+    </div>
+
+</div>

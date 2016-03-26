@@ -1,0 +1,90 @@
+
+<div id="ampcard_{{ vm.cardID }}" class="card" ng-if="vm.validCardData == true">
+  <header id="ampcard_header_{{ vm.cardID }}" style="min-height: 40px; min-width: 100%;
+background: rgb(254,255,232); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(254,255,232,1) 0%, rgba(158,255,167,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(254,255,232,1) 0%,rgba(158,255,167,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(254,255,232,1) 0%,rgba(158,255,167,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#9effa7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+">
+  <strong class="card-title" style="float: left; margin: 5px">{{ vm.cardData.amp_title | limitTo:40 }}</strong>
+  <a href="#" class="btn btn-default" ng-show="vm.showMinimize == true" style="float: right" ng-click="vm.minimize(vm.cardID)"><i class="fa fa-compress"></i></a>
+  <a href="#" class="btn btn-default" ng-show="vm.showMaximize == true" style="float: right" ng-click="vm.maximize(vm.cardID)"><i class="fa fa-expand"></i></a>
+     <div ng-if="vm.cardData.amp_source.type.id == 'VIDEO'"><iframe id="titlebar_video_iframe_{{ vm.cardID }}" height="100%" width="100%" class="video_frame_show" ng-src="{{ vm.embededVideoData.video_url }}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> 
+    
+  <div ng-if="vm.cardData.amp_image_url != ''"><img class="card-img-top" height="100" width="100%" src="{{ vm.cardData.amp_image_url }}" alt="Card image cap"></div>
+  <div ng-if="vm.cardData.amp_image_url == '' &&  vm.cardData.amp_source.type.id != 'VIDEO'"><br></div>
+  </header>
+  <div ng-if="vm.showCard == true" id="card_content_{{ vm.cardID }}" class="card-block" style="overflow-y: scroll; max-height: 200px">
+    <h4 class="card-title" style="padding-bottom: 0px">{{ vm.cardData.amp_title }} </h4>
+    <div id="card_content_text">
+    <p class="card-text" id="amp_background_text_{{ vm.cardID }}"></p>
+    <!-- <p class="card-text">{{ vm.cardData.amp_background_text }}
+    </p> --> 
+    <p class="card-text" ng-if="vm.ampType == 'VIDEO' && vm.embededVideoData.src_type != ''" id="embed_video_{{ vm.cardID }}">
+      <a href="{{ vm.embededVideoData.view_url }}" target="_blank">Click to watch video in new window</a>
+       <!-- <iframe width="100%" id="video_iframe_{{ vm.cardID }}" height="100%" ng-src="{{ vm.embededVideoData.video_url }}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+    </p>
+    <p class="card-text" id="markdown_data_{{ vm.cardID }}">
+        {{ vm.cardData.markdownData }}
+        
+    </p>
+    <a href="{{ vm.cardData.amp_source.view_url }}" target="_blank" class="btn btn-primary">See More</a>
+   </div>
+      
+  </div>
+  <div id="card_source_{{ vm.cardID }}" ng-if="vm.showAmpSource == true" style="overflow-y: scroll; max-height: 200px">
+    <div class="container-fluid" style="margin:0px; padding: 0px">
+    <table class="table table-striped" style="margin:0px; padding: 0px">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Source Attribute</th>
+          <th>Source Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, value) in vm.cardData.amp_source">
+          <td>{{ key }}</td>
+          <td>{{ value }}</td>
+        </tr>
+        <tr>
+          <td>Raw Source</td>
+          <td><textarea class="form-control" id="exampleTextarea" rows="3">{{ vm.cardData | json }}</textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  
+    <small class="text-muted" style="padding: 5px">{{ vm.cardDate }}</small><br>
+  <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+  <a type="button" href="{{ vm.cardData.amp_source.view_url }}" target="_blank" class="btn btn-secondary fa fa-external-link-square"></a>
+  <a type="button" class="btn btn-secondary fa fa-twitter" href="https://twitter.com/intent/tweet?text={{ vm.cardData.amp_title }}&url={{ vm.mainURL }}" target="_blank"></a>
+
+  <div class="btn-group btn-group-sm" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      More
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" ng-click="vm.toggleAmpDetails(vm.cardID)">Toggle Material Details</a>
+    </div>
+  </div>
+  <div class="btn-group btn-group-sm" style="padding-left: 10px" role="group">
+   <footer>
+        <small class="text-muted">
+          Src: {{ vm.cardData.amp_source_name }} 
+          <cite title="Source Title" ng-if="vm.cardData.amp_contact.twitter">
+            <a href="https://twitter.com/{{ vm.cardData.amp_contact.twitter }}" target="_blank">{{ vm.cardData.amp_contact.twitter }}</a>
+          </cite>
+          <cite ng-if="vm.cardData.amp_contact.twitter == ''">{{ vm.cardData.amp_creator }}</cite>
+        </cite>
+        </small>
+      </footer>
+    </div>
+    
+</div>
+</div>
+
+<!-- 
+INCLUDED {{ vm.cardData | json }}
+-->

@@ -44,8 +44,8 @@
 <h1>Making materials distribution for <br> the security community easier.</h1>
 <h2>Readers....read....writers...publish directly from <a href="https://github.com">GitHub</a>.<br> Try to think of it like Docker but for content materials and informational artifacts.</h2>
   <h2><button type="button" class="btn btn-lg btn-primary-outline" id="how_it_works_button">How does it work?</button>
-  <button type="button" class="btn btn-lg btn-success-outline" id="login_button">Login</button></h2>
-    <a href="#" class="help-link">Login</a>
+  <button type="button" class="btn btn-lg btn-success-outline" onclick="document.location='./app/entry.html'" id="login_button">Login</button></h2>
+    <a href="./app/entry.html" class="help-link">Login</a>
 
     <div id="slideshow">
       <!-- some nice cool graphic and images should go here -->
@@ -64,11 +64,25 @@
   <ul id="user-site" class="tutorial-list wrapper">
     <li id="create-repo-step" class="">
       <h2>Author or Got Materials?</h2>
-      <p>Maybe you have a blog today, or a whitepaper, or an awesome new code repository that you want to share or how about helping to create some material artifacts or help create some guides on how to do things.</p>
-      <p>Head over to <a href="https://github.com">GitHub</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a> named <em>amp-whateveryouwant</em>, where <em>whateveryouwant</em> will be the name of your material addition.</p>
+      <p>Maybe you have a blog today, a whitepaper, an awesome new code repository, or found some awesome new security or hacking thing that you want to share. How about helping to create some material artifacts or help create some guides on how to do things.
+      The goal of this project is to develop a way of sharing security/hacking informational materials and artifacts in a new way. 
+There is also a simple collaborative app where people can submit new materials, attack and defend guides and articles across the Security Community. Notice I didn't use the word Cyber? Its because a printed 3D Key of a TSA lock...Is not Cyber related....
+So whether you have a new project that sends out AM frequencies on a system bus, a new 3D printed project for creating keys, an awesome article, guide, or tutorial, or a new project that defends against attacks the goal is to provide a way of sharing this information, in a somewhat distributed way. 
+</p>
+      <p>To create anomalous materials, you have a few options. <br>
+      <h4>Option 1</h4>
+      <P><a href="./app/entry.html">Login</a> and click the create/submit link in the nav. You will then be presented with a simple form, and you can also read more about advanced options.<br><a class="btn btn-success" href="./app/entry.html">Login Now</a></P>
+      <h4>Option 2</h4>
+      <p>Fork/Clone amp-materials repo, add anomalous metadata file, submit pull request. </p>
+      <h4>Option 3</h4>
+      <p>For users that want to host their own anomalous metadata file either in their own repo or elsewhere. If you are using github, you can simply create a new repo, or add the metadata file to an existing repo and then submit it using the create/submit form under anomalout/advanced to submit the URL of the anomalous material metadata file. 
+      If you are not using github, and you are hosting the metadata file on a server with CORS enabled, then you must provide access for the anomalous materials domain. This is only temporary as there is currently no server backend to process outbound requests. In the future I may add other methods to submit depending on your feedback. For information on CORS see the wikipedia article or determine how to add the appropriate cross origin resource headers for your specific environment.
+      </p>
+      <h2>Ready to get started?</h2>
+      <p>
+      Head over to <a href="https://github.com">GitHub</a> and <a data-proofer-ignore="true" href="https://github.com/new">clone the amp-materials repo</a> OR <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a> named <em>amp-whateveryouwant</em>, where <em>whateveryouwant</em> will be the name of your material addition.</p>
+      </p>
 
-
-      <p class="details">Note: If the first part of the repository doesn’t exactly match amp, it may not work, so make sure to get it right.</p>
     </li>
     <li class="question">
       <h4>What git client are you using?</h4>
@@ -103,11 +117,59 @@
 
     <li class="option-terminal">
       <h4>Add Material Metadata</h4>
-      <p>Enter the project folder and add an metadata file:</p>
-
+      <p>Enter the project folder and add a anomalous material metadata file:</p>
+      <p>Explanations for the field types, what they are used for etc, are located in the README file in the repo.</p>
       <div class="terminal">
         <div class="header"></div>
         <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>cat &lt;&lt;EOF &gt;amp-whatever.json</EOF>
+                    </p>
+
+                    <p>
+                        <pre class="shell">
+
+  "amp_author": "@authorOFMaterialNameTeamWTFUwant",
+  "amp_creator": "@creatorThatIsAddingIt",
+  "amp_created": "1234567890",
+  "amp_status": "draft",
+  "amp_title": "Attack surfaces for zeus botnet",
+  "amp_background_text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+  "amp_tags": "article, guides, rants, complaints",
+  "amp_category": {
+    "id": "PROJECT",
+    "name": "Project"
+  },
+  "amp_image_url": "https://i.ytimg.com/vi/0xRCYmbvfEs/maxresdefault.jpg",
+  "amp_thumb_url": null,
+  "amp_name": "Guide To Attack Surfaces",
+  "amp_contact": {
+    "twitter": "@author",
+    "email": "someone@someplace.com"
+  },
+  "amp_source": {
+    "created": "1458385143",
+    "updated": "1458385143",
+    "origin": "Twitter",
+    "location": "Github",
+    "type": {
+      "id": "MARKRDOWN",
+      "name": "Github (project markdown readme files etc)"
+    },
+    "file_name": "README.md",
+    "file_desc": "Blog Entry Point",
+    "file_size": "1mb",
+    "integrity": "sha384-vZ2WR....",
+    "crossorigin": "anonymous",
+    "base_url": "https://raw.githubusercontent.com/",
+    "view_url": "https://github.com/markdown-it/markdown-it",
+    "file_url": "https://raw.githubusercontent.com/markdown-it/markdown-it/master/README.md",
+    "base_branch": "markdown-it/markdown-it",
+    "branch_name": "master",
+    "branch_list": []
+  }
+}
+</pre> EOF
+                    </p>
           <!-- 
           <p><span class="path">~</span><span class="prompt">$</span>cd <em>username</em>.github.io</p>
           <p><span class="path">~</span><span class="prompt">$</span>echo "Hello World" > index.html</p>
@@ -173,8 +235,9 @@
       The problem for me at least was finding, quality material without diving into a pile of _______ and filtering through the noise. Sometimes, I would sit watching the twittersphere, asking people, or hunting for information. Then one day I spoke to an archeologist, and my anomalous light went off...Why not treat materials in our market, as artifacts....because if its known...its probably no longer an 0 day...
       <ul class="tabs">
         <li><a id="option-generate" href="#generate-step-1" class="selected">Rant More?</a></li>
-        <li><a id="asignup" href="#">Signup (coming soon)</a></li>
-      </ul>
+        <li><a data-proofer-ignore="true" id="ignore" href="./app/entry.html">Skip To Login</a></li>
+      </ul><br>
+     <small>Note: Since the project is new there might not be a lot of material...</small> 
     </li>
 
     <li id="generate-step-1" class="option-generate">
@@ -198,8 +261,8 @@
    
 
     <li class="option-generate">
-      <h4>What no signup form, fancy screenshots or proof???</h4>
-      <p>Soon... But <strong>Initially</strong> the material will be provided visually in a small app in a card format kind of like bookmarketing websites or seen below. The difference is in how the cards linking to the material are constructed. Basically each anomalous material, will use metadata maintained by its originating author.... At which point each card will have associated options on what you can do with the anomalous material. Maybe you can downloaded it...maybe its encrypted..maybe the material itself is secret code for the user cyber apocalpyse end of the world date...or a puzzle produced by 1o57 for you to solve...For instance if its an artifact that is a video, then it might play the video, if it is an artifact to a code repository, it might show you information regarding the project, possibly snippets of code etc. The metadata may also be linked thus making a material artifact a larger conglomerate.
+      <h4>Get to the point! What is the app like???</h4>
+      <p><strong>Initially</strong> the material will be provided visually in a small app in a card format kind of like bookmarketing websites or seen below. The difference is in how the cards linking to the material are constructed. Basically each anomalous material, will use metadata maintained by either the author...or the creator (the person that found it).... At which point each card will have associated options on what you can do with the anomalous material. Maybe you can downloaded it...maybe its encrypted..maybe the material itself is secret code for the user cyber apocalpyse end of the world date...or a puzzle produced by 1o57 for you to solve...For instance if its an artifact that is a video, then it might play the video, if it is an artifact to a code repository, it might show you information regarding the project, possibly snippets of code etc. The metadata may also be linked thus making a material artifact a larger conglomerate.
       <br><br>
       Unlike the bookmarketing sites, the idea behind a conglomerate is to group related anomalous materials together. <strong>The following is a good history lesson</strong> to give you a better idea. 
       Back in the mid-late 90's there was a digital Artist group called <a href="http://www.ICE.org" target="_new">ICE.org</a> one of the really cool things they did was make something called Artist <a href="http://www.ice.org/tiles/Mainquilters-32:-Time" target="_blank">Digital Tiles</a>. The digital tiles were a collaboration of artwork combined into one big image. Think of google maps, but that each title consists of someone actually creating the artwork behind the tile. Rumor has it that some of the artist were big in the demoscene, and cracktros back in the day... 
@@ -296,7 +359,7 @@
 
 <footer class="page-footer">
   <ul class="site-footer-links right">
-    <li><a href="https://status.github.com/">Login</a></li>
+    <li><a href="./app/entry.html">Login</a></li>
    
   </ul>
 

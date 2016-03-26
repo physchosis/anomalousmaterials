@@ -1,1 +1,95 @@
-testing sub dir
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.2.0/toaster.css">
+   <!-- font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+  
+  <!-- jQuery first, then Bootstrap JS. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+  
+ 
+  <!-- markdown handler -->
+  <script src="https://cdn.jsdelivr.net/markdown-it/6.0.0/markdown-it.min.js"></script>
+  
+  <!-- toaster used for displaying messages -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.2.0/toaster.min.js"></script>
+  
+  <!-- app stuff -->
+  <link rel="stylesheet" href="components/createform/createform.css">
+
+</head>
+
+<body ng-app="ampApp" ng-controller="mainCtrl as mainCtrl">
+  <!-- toaster -->
+  <toaster-container></toaster-container>
+  <!-- amp navigation -->
+  <ampnav></ampnav>
+  <!-- end amp navigation -->
+
+  <!-- dashboard holder -->
+  <div id="dashboard_container" class="container-fluid" style="background: #444; padding-top: 20px">
+    <!-- begin cards -->
+    <div id="dashboard_cards" class="card-columns">
+      <div ng-repeat="materialData in materialsList">
+         <ampcards ampdata='materialData'></ampcards>
+     
+      </div>
+      <!-- end cards -->
+    </div>
+  </div>
+  <!-- end dashboard holder -->
+
+  <!-- creator holder -->
+  <div id="createform_container" class="container-fluid" style="display: none; padding-top: 20px">
+    <div id="createform">
+      <ampcreator></ampcreator>
+    </div>
+  </div>
+  <!-- end creator holder -->
+
+
+  <script>
+    var authRef = new Firebase('https://scorching-inferno-2987.firebaseio.com/web/uauth');
+    var currentUser = authRef.getAuth();
+    function isUserSignedIn() {
+      if(!currentUser) {
+        document.location = './entry.html';
+      }
+      setTimeout(isUserSignedIn, 20000);
+    }
+    
+    isUserSignedIn();
+    // if current user move along
+
+    console.log('CurrentUser', currentUser);
+  </script>
+
+  <script src="main.js"></script>
+  <script src="components/cards/cards.js"></script>
+  <script src="components/navbar/navbar.js"></script>
+
+  <script src="components/createform/createform.js"></script>
+</body>
+
+</html>
