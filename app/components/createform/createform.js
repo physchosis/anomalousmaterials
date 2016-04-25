@@ -97,8 +97,44 @@
                 "branch_name": "",
                 "branch_list": []
             }
-        }
+        };
         this.advancedModel = this.formModel;
+        this.resetModel = {
+            "amp_author": "",
+            "amp_creator": "",
+            "amp_created": new Date().getTime().toString(),
+            "amp_status": "draft",
+            "amp_title": "",
+            "amp_background_text": "",
+            "amp_tags": "",
+            "amp_category": {}, //{"id": "PROJECT", "name": "Project"},
+            "amp_image_url": "",
+            "amp_thumb_url": null,
+            "amp_name": "",
+            "amp_contact": {
+                "twitter": "",
+                "email": ""
+
+            },
+            "amp_source": {
+                "created": new Date().getTime().toString(),
+                "updated": new Date().getTime().toString(),
+                "origin": "",
+                "location": "",
+                "type": {}, //{"id": "MARKDOWN", "name": "Github (project markdown readme files etc)"},
+                "file_name": "",
+                "file_desc": "",
+                "file_size": "",
+                "integrity": "",
+                "crossorigin": "",
+                "base_url": "",
+                "view_url": "",
+                "file_url": "",
+                "base_branch": "",
+                "branch_name": "",
+                "branch_list": []
+            }
+        };
     }
     
     CreateFormController.prototype.createAMP = function() {
@@ -106,6 +142,7 @@
         this.toaster.pop('success', "Success", "Thanks for creating and submitting an anomalous material!");
         $('#createform_container').hide();
         $('#dashboard_container').show();
+        this.formModel = this.resetModel;
         
     }
     
