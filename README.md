@@ -1,15 +1,25 @@
 #The Anomalous Materials Project
->Exceptional things come from abnormal, atypical, irregular, aberrant, freakish, odd, bizarre, peculiar, unusual, and out of the ordinary HUMANS!
+>Exceptional things come from abnormal, atypical, irregular, aberrant, freakish, odd, bizarre, peculiar, unusual, and out of the ordinary HUMANS! 
 
 
 #What is it?
 
+First check out the following link for more information:
+http://physchosis.github.io/anomalousmaterials/
+
 >The goal of this project is to develop a way of sharing security informational materials and artifacts in a new way. 
 There is also a simple collaborative app where people can submit new materials, attack and defend guides and articles across the Security Community. Notice I didn't use the word Cyber? Its because a printed 3D Key of a TSA lock...Is not Cyber related....
 So whether you have a new project that sends out AM frequencies on a system bus, a new 3D printed project for creating keys, an awesome article, guide, or tutorial, or a new project that defends against attacks the goal is to provide a way of sharing this information, in a somewhat distributed way. 
-#Dumbass....this already exists.
+#Uh......this already exists.
 
 >Sure there are thousands of blogs, content management systems, apps, major news outlets, youtube, and daily emails or tools that someone could use to bookmark everything, but wouldn't it be great if we had a repo of all of this wonderful knowledge wrapped up with a nice bow on it?
+
+
+#Why not just use a booksharing utility or something of that sort?
+>There are a variety of answers for this. The longer term goal is to be able to do some things differently. As the web progresses, things change, and with that change sometimes things go away, sometimes things stay the same. One thing that can get concerning at times is relying on things to always be there when they may not be.
+So some longer term goals are to provide tidbits of informational artifacts, provided in an open way, that can be accessed, and possibly cached, and linked. Like linked data. To understand this better, today we rely strictly on major search engines, CDN providers, and the like in order to keep informational artifacts available but maybe there is an alternative approach. One example of this is with LinkedData (Semantic Web) and another is with Information Centric Networking, where the goal is that the network fabric itself, becomes the storage engine.
+as seen https://en.wikipedia.org/wiki/Linked_data and http://tools.ietf.org/html/rfc7476
+
 
 #Status
 
@@ -20,12 +30,13 @@ So whether you have a new project that sends out AM frequencies on a system bus,
 The metdata information determines things like who created it, what it is, where can you find information about it, what type of material it is, and so forth. The plan
 is to come up with a variety of different metadata JSON attributes along with different displays depending on the type of the data. 
 
-Lets take a 
 
 #How do I create a material?
 >There are a few different ways that anomalous materials can be created. The first recommendation would be to read this README file associated with the main gh-pages branch. This will actually be moved to the amp-materials branch and have its own anomalous material metadata file associated.
 >Not So Technical Way - A simple way is to just use the form on the site to create a new material. The problem is that this will limit you to what features you can use, along with being able to handle updating information regarding the actual material. 
+
 >Technical Way
+
 Option 1 - Fork/Clone amp-materials repo, add anomalous metadata file, submit pull request
 For Github users that just want to clone the amp-materials branch, make your change, and submit a pull request simply clone the amp-materials repository, take one of the examples, copy and modify the meta-data, and then just submit a pull request. The only downside to doing this is that the change will have to be accepted into the main trunk line. Im not a git expert so there might be ways of doing this differently like adding submodules, and thoughts here would be appreciated.
 
@@ -34,7 +45,7 @@ If you are using github, you can simply create a new repo, or add the metadata f
 
 The following are steps if you want to host your own anomalous metadata file.
 
-~$git clone https://github.com/____/____.github.io
+~$git clone https://github.com/physchosis/anomalousmaterials.git
 
 2) If you are not using github
 GOTO step 3...add a metadata json file with your material information onto your server and submit it in the form below
@@ -179,11 +190,6 @@ it allows us to add more categories or source types and do things later.
         
 >Quick example...if a source type was MARKDOWN then we would fetch the markdown README and try to display it. If the source type was say a VIDEO then we might try to embed the video (depending on where its coming from)
 If the source type was say a new schematic on taking over _________ like controlling a boat remotely, then most likely we would just use the metadata and point to the repo, place, etc where the material is located.
-
-#Why not just use a booksharing utility or something of that sort?
->There are a variety of answers for this. The longer term goal is to be able to do some things differently. As the web progresses, things change, and with that change sometimes things go away, sometimes things stay the same. One thing that can get concerning at times is relying on things to always be there when they may not be.
-So some longer term goals are to provide tidbits of informational artifacts, provided in an open way, that can be accessed, and possibly cached, and linked. Like linked data. To understand this better, today we rely strictly on major search engines, CDN providers, and the like in order to keep informational artifacts available but maybe there is an alternative approach. One example of this is with LinkedData (Semantic Web) and another is with Information Centric Networking, where the goal is that the network fabric itself, becomes the storage engine.
-as seen https://en.wikipedia.org/wiki/Linked_data and http://tools.ietf.org/html/rfc7476
 
 ##Authors and Contributors
 

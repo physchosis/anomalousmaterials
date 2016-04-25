@@ -1,0 +1,42 @@
+{
+  "amp_author": "@physchosis", 
+  "amp_creator": "@physchosis", 
+  "amp_created": "1459089053", 
+  "amp_status": "draft", 
+  "amp_title": "The anomalous materials project",
+  "amp_background_text": "Making materials distribution for the security community easier. The goal of this project is to develop a way of sharing security informational materials and artifacts in a new way.",
+  "amp_tags": "project, article, guide",
+  "amp_category": {  
+    "id": "PROJECT",
+    "name": "Project"
+  },
+  "amp_image_url": "https://i.ytimg.com/vi/0xRCYmbvfEs/maxresdefault.jpg",
+  "amp_thumb_url": null, 
+  "amp_name": "The anomalous materials project",
+  "amp_contact": { 
+    "twitter": "@phschosis",
+    "email": null
+  },
+  "amp_source": { 
+    "created": "1459089053", 
+    "updated": "1459089053", 
+    "origin": "Github", 
+    "location": "Github", 
+    "type": { 
+      "id": "MARKDOWN",
+      "name": "Github (project markdown readme files etc)"
+    },
+    "file_name": "README.md", 
+    "file_desc": "Readme file of project", 
+    "file_size": "13K",
+    "integrity": "sha256-cabffe36e511b1ffbe03c1a81baf57d059694b23134571a3a68a182db73f61f8", 
+    "crossorigin": "anonymous", 
+    "base_url": "https://raw.githubusercontent.com/", 
+    "view_url": "https://github.com/physchosis/anomalousmaterials", 
+    "file_url": "https://raw.githubusercontent.com/physchosis/anomalousmaterials/master/README.md", 
+    "file_list": [],
+    "base_branch": "physchosis/anomalousmaterials",
+    "branch_name": "master", 
+    "branch_list": [] 
+  }
+}
