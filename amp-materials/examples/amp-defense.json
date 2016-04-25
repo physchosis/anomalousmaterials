@@ -1,0 +1,42 @@
+{
+  "amp_author": "@someone", 
+  "amp_creator": "@someoneelse", 
+  "amp_created": "1459089053", 
+  "amp_status": "draft", 
+  "amp_title": "Some neat active defense tool",
+  "amp_background_text": "someoneelse created a new active defense tool.",
+  "amp_tags": "project",
+  "amp_category": {  
+    "id": "PROJECT",
+    "name": "Project"
+  },
+  "amp_image_url": "https://i.ytimg.com/vi/0xRCYmbvfEs/maxresdefault.jpg",
+  "amp_thumb_url": null, 
+  "amp_name": "New active defense tool",
+  "amp_contact": { 
+    "twitter": "",
+    "email": null
+  },
+  "amp_source": { 
+    "created": "1459089053", 
+    "updated": "1459089053", 
+    "origin": "Github", 
+    "location": "Github", 
+    "type": { 
+      "id": "MARKDOWN",
+      "name": "Github (project markdown readme files etc)"
+    },
+    "file_name": "README.md", 
+    "file_desc": "Readme file of project", 
+    "file_size": "13K",
+    "integrity": "sha256-...", 
+    "crossorigin": "anonymous", 
+    "base_url": "https://raw.githubusercontent.com/", 
+    "view_url": "https://github.com/path/to/project", 
+    "file_url": "https://raw.githubusercontent.com/path/to/project/master/README.md", 
+    "file_list": [],
+    "base_branch": "path/to/project",
+    "branch_name": "master", 
+    "branch_list": [] 
+  }
+}
